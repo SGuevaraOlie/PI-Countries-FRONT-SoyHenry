@@ -12,6 +12,9 @@ import Form from './views/Form/Form.view'
 import Error from './views/Error/Error.view'
 // Component
 import NavBar from './components/NavBar/NavBar'
+// Axios
+import axios from 'axios'
+axios.defaults.baseURL = 'http://localhost:3001/'
 
 function App() {
   const { pathname } = useLocation();

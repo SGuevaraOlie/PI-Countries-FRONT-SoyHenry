@@ -17,7 +17,7 @@ import axios from 'axios';
 export const getCountries = () => {
     return async (dispatch) => {
         try {
-            const countries = await axios.get("http://localhost:3001/countries");
+            const countries = await axios.get("/countries");
             dispatch({
                 type: GET_COUNTRIES,
                 payload: countries.data
@@ -31,7 +31,7 @@ export const getCountries = () => {
 export const searchCountries = (name) => {
     return async (dispatch) => {
         try {
-            const response = await axios.get(`http://localhost:3001/country?name=${name}`);
+            const response = await axios.get(`/country?name=${name}`);
             if (response.data.length === 0){
                 window.alert(`No se encontró ningún país con el nombre ${name}`)
             } else {
