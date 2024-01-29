@@ -47,7 +47,7 @@ const Form = () => {
     }
     try {
       const response = await axios.post(
-        'http://localhost:3001/activities',
+        '/activities',
         values
       )
       const successfulMessage = `Se ha creado la nueva actividad turística: ${values.name}`;

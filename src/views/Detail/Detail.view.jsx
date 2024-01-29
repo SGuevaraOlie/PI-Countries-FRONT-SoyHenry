@@ -13,7 +13,7 @@ const Detail = () => {
     const [country, setCountry] = useState({});
     const { id } = useParams();
     useEffect(() => {
-        axios(`http://localhost:3001/countries/${id}`)
+        axios(`/countries/${id}`)
         .then((res) => {
             setCountry(res.data);
         })

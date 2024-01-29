@@ -14,7 +14,7 @@ const ActivityFilter = () => {
     const [activities, setActivities] = useState([]);
     useEffect(() => {
         const filterActivities = async() => {
-            const response = await axios.get("http://localhost:3001/activities");
+            const response = await axios.get("/activities");
             const activityNames = response.data.map((activity) => activity.name);
             setActivities(activityNames);
         };

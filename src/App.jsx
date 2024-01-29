@@ -14,7 +14,7 @@ import Error from './views/Error/Error.view'
 import NavBar from './components/NavBar/NavBar'
 // Axios
 import axios from 'axios'
-axios.defaults.baseURL = 'http://localhost:3001/'
+axios.defaults.baseURL = 'https://pi-countries-back-soyhenry-production.up.railway.app'
 
 function App() {
   const { pathname } = useLocation();
