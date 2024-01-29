@@ -1,25 +1,26 @@
 // Routing
-import { Link, Route, Routes, useLocation } from 'react-router-dom';
+import { Link, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 // Components
 import SearchBar from '../SearchBar/SearchBar';
 // Helpers
 import PATHROUTES from '../../helpers/PathRoutes.helper';
 // Styles
 import styles from './NavBar.module.css'
+import { useDispatch } from 'react-redux';
+import { resetCountries } from '../../redux/actions';
 
 
 const NavBar = () => {
-    const location = useLocation();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     const handleHomeClick = () => {
-        if (location.pathname === PATHROUTES.HOME){
-            window.location.reload();
-        }
+        navigate('/home');
     }
     return (
         <div className={styles.navMain}>
             <div className={styles.links}>
                 <Link to={PATHROUTES.LANDING} className={styles.title}><h1>Countries APP</h1></Link>
-                <Link to={PATHROUTES.HOME} className={styles.title} onClick={handleHomeClick}><h1>Home</h1></Link>
+                <a className={styles.title} href='/home'><h1>Home</h1></a>
                 <Link to={PATHROUTES.FORM} className={styles.title}><h1>Crear Actividades</h1></Link>
             </div>
             <Routes>
